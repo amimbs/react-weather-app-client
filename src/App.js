@@ -1,18 +1,35 @@
 import { useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import apiRequest from './hooks/apiRequest';
+import CurrentForecast from './components/CurrentForecast';
+
 
 
 export default function App() {
 
 
-  const [ queryResult, setQueryResult ] = useState('')
-  console.log(queryResult)
+  const [queryResult, setQueryResult] = useState('Atlanta')
+
+  const { data, loading } = apiRequest(queryResult)
+
+  const body = Object.keys(data).length !== 0 && (
+    // there has to be a wrapper here because react can only return a single url element
+    <>
+      <CurrentForecast data={data} />
+    </>
+  );
+
+  const loadingDiv = <div className="loadingDiv">Loading . . .</div>
 
   return (
     <div className="App">
+      <ToastContainer />
       <h1>Weather APP</h1>
       <SearchBar setQueryResult={setQueryResult} />
+      {loading ? loadingDiv : body}
     </div>
   );
 }
