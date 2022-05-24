@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function CurrentForecast({ data }) {
     const currentData = data.list[0];
-    const precipitation = (currentData.rain[Object.keys(currentData.rain)[0]] / 25.4)
+    const precipitation = currentData.rain ? (currentData.rain[Object.keys(currentData.rain)[0]] / 25.4): 0
     let date = new Date(currentData.dt_txt)
     const options = { weekDay: "long" }
     let day = new Intl.DateTimeFormat('en-US', options).format(date);
@@ -11,7 +11,7 @@ export default function CurrentForecast({ data }) {
     return (
         <StyledCurrentForecast>
             <div className="current-forecast box-shadow">
-                <img src={`https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png`} alt="" />
+                <img src={`https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png`} alt="icon" />
                 <h1>{currentData.main.temp.toFixed()}°F</h1>
 
                 <div className="content">

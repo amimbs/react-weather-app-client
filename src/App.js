@@ -20,9 +20,8 @@ export default function App() {
     // there has to be a wrapper here because react can only return a single url element
     <>
       <CurrentForecast data={data} />
+      <h2 style={{margin: "20px 0"}}>Forecast</h2>
       <FiveDay data={data} />
-
-
     </>
   );
 
