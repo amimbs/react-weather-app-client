@@ -1,4 +1,4 @@
-export default function Day(props) {
+export default function CurrentForecast(props) {
     //display this junk first
     // day
     // temp in F

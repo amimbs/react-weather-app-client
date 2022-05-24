@@ -15,7 +15,7 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### Project goals
-- ~~Uses OpenWeather Api~~
+- ~~Uses OpenWeather Api https://openweathermap.org/forecast5#JSON~~
 - ~~Fetch Data~~
 - 5 day forecast
 - Allow the user to click and individual day and see that day's detailed data
