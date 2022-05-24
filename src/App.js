@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import apiRequest from './hooks/apiRequest';
+// import FiveDay from './components/FiveDay';
 import CurrentForecast from './components/CurrentForecast';
 
 
@@ -19,6 +20,8 @@ export default function App() {
     // there has to be a wrapper here because react can only return a single url element
     <>
       <CurrentForecast data={data} />
+      {/* <FiveDay data={data} /> */}
+
     </>
   );
 
