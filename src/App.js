@@ -4,8 +4,8 @@ import SearchBar from './components/SearchBar'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import apiRequest from './hooks/apiRequest';
-// import FiveDay from './components/FiveDay';
 import CurrentForecast from './components/CurrentForecast';
+import FiveDay from './components/FiveDay';
 
 
 
@@ -20,7 +20,8 @@ export default function App() {
     // there has to be a wrapper here because react can only return a single url element
     <>
       <CurrentForecast data={data} />
-      {/* <FiveDay data={data} /> */}
+      <FiveDay data={data} />
+
 
     </>
   );
@@ -30,7 +31,7 @@ export default function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <h1>Weather APP</h1>
+      <h1 style={{ margin: "30px 0px" }}>Weather APP</h1>
       <SearchBar setQueryResult={setQueryResult} />
       {loading ? loadingDiv : body}
     </div>

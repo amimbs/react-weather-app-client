@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 export default function SearchBar({setQueryResult}) {
     const [searchQuery, setSearchQuery] = useState('')
@@ -10,7 +11,7 @@ export default function SearchBar({setQueryResult}) {
     }
 
     return (
-        <div>
+        <StyledSearchBar>
             <form onSubmit={onSubmit}>
                 <input
                     type="text"
@@ -19,6 +20,16 @@ export default function SearchBar({setQueryResult}) {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
             </form>
-        </div>
+        </StyledSearchBar>
     );
 };
+
+const StyledSearchBar = styled.div `
+    margin-bottom: 30px;
+    input{
+        width: 80%;
+        height: 40px;
+        border-radius: 10px;
+        padding-left: 20px;
+    }
+`;
