@@ -17,5 +17,10 @@ You may also see any lint errors in the console.
 ### Project goals
 - ~~Uses OpenWeather Api https://openweathermap.org/forecast5#JSON~~
 - ~~Fetch Data~~
-- 5 day forecast
-- Allow the user to click and individual day and see that day's detailed data
+- ~~5 day forecast~~
+- ~~Implement Toastify for imvalid searches~~
+- ~~divide each 3 hr incremenent of a day from the api into individual day divs~~
+- ~~style the cards for each 3hr increment with each parent day div~~
+- ~~display the correct days of the week~~
+- optimize and styling
+

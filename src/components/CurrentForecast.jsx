@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import image from "../assets/city.bmp"
+
+
 
 export default function CurrentForecast({ data }) {
     const currentData = data.list[0];
-    const precipitation = currentData.rain ? (currentData.rain[Object.keys(currentData.rain)[0]] / 25.4): 0
+    const precipitation = currentData.rain ? (currentData.rain[Object.keys(currentData.rain)[0]] / 25.4) : 0;
     let date = new Date(currentData.dt_txt)
     const options = { weekDay: "long" }
     let day = new Intl.DateTimeFormat('en-US', options).format(date);
@@ -30,8 +33,9 @@ export default function CurrentForecast({ data }) {
                     {data.city.name}
                 </h2>
                 <h3>
-                    {data.city.country}
+                    ,{data.city.country}
                 </h3>
+                <img src={image} alt="city" />
                 <h4>
                     {day}
                 </h4>
@@ -50,13 +54,15 @@ const StyledCurrentForecast = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 400px;
+        width: 350px;
         padding: 20px;
         flex-direction: column;
+        background: black;
+        color: white;
 
         img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
         }
 
         h1 {
@@ -73,22 +79,28 @@ const StyledCurrentForecast = styled.div`
     .location {
         width: 350px;
         padding: 20px;
+        background: black;
+        color: white;
 
-        h2{
+        h2 {
             text-align: right;
             font-size: 2rem;
             margin-bottom: 10px;
         }
-        h3{
+        h3 {
             text-align: right;
             font-size: 1rem;
             margin-bottom: 10px;
         }
-        h4{
+        h4 {
             text-align: right;
             font-size: 1rem;
             margin-bottom: 10px;
             font-weight: 500;
+        }
+        img {
+            margin-bottom: 10px;
+            width: 200px;
         }
     }
 
