@@ -8,8 +8,6 @@ import CurrentForecast from './components/CurrentForecast';
 import FiveDay from './components/FiveDay';
 
 
-
-
 export default function App() {
 
 
@@ -21,7 +19,7 @@ export default function App() {
     // there has to be a wrapper here because react can only return a single url element
     <>
       <CurrentForecast data={data} />
-      <h2 style={{margin: "20px 0"}}>Forecast</h2>
+      <h2 style={{margin: "50px 0"}} className="forecast">Forecast</h2>
       <FiveDay data={data} />
     </>
   );

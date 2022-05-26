@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import image from "../assets/city.bmp"
+import { getHumanDay } from "./FiveDay";
 
 
 
@@ -19,10 +20,13 @@ export default function CurrentForecast({ data }) {
 
                 <div className="content">
                     <h5>
-                        Precipitation: {precipitation.toFixed()} in
+                        Precipitation Volumn: {precipitation.toFixed()} in
                     </h5>
                     <h5>
-                        Wind: {currentData.wind.speed} MPH
+                        Wind Speed: {currentData.wind.speed} MPH
+                    </h5>
+                    <h5>
+                        Humidity: {currentData.main.humidity}%
                     </h5>
 
                 </div>
@@ -33,12 +37,15 @@ export default function CurrentForecast({ data }) {
                     {data.city.name}
                 </h2>
                 <h3>
-                    ,{data.city.country}
+                    {data.city.country}
                 </h3>
                 <img src={image} alt="city" />
                 <h4>
                     {day}
                 </h4>
+                <h5>
+                    {getHumanDay(currentData.dt_txt)}
+                </h5>
             </div>
 
         </StyledCurrentForecast>
@@ -61,12 +68,13 @@ const StyledCurrentForecast = styled.div`
         color: white;
 
         img {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
         }
 
         h1 {
             font-size: 2rem;
+            margin-bottom: 30px
         }
 
         .content {
@@ -93,7 +101,13 @@ const StyledCurrentForecast = styled.div`
             margin-bottom: 10px;
         }
         h4 {
-            text-align: right;
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        h5 {
+            text-align: center;
             font-size: 1rem;
             margin-bottom: 10px;
             font-weight: 500;

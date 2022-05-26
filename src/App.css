@@ -5,8 +5,9 @@
 }
 
 body {
-  max-width: 800px;
-  margin-inline: auto;
+  background: url('./assets/desert_by_josegoncalo_de1sggg.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
 }
 
 .box-shadow {
@@ -14,6 +15,17 @@ body {
   -webkit-box-shadow: -1px 3px 7px -1px rgba(0,0,0,0.41);
   -moz-box-shadow: -1px 3px 7px -1px rgba(0,0,0,0.41); */
   border-radius: 15px;
+}
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+}
+
+.forecast{
+  text-align: center;
+  font-size: 2rem;
 }
 
 .day1 {
@@ -44,4 +56,21 @@ body {
   display: flex;
   overflow-y: hidden;
   padding: 20px;
+}
+
+.day6 {
+  display: flex;
+  overflow-y: hidden;
+  padding: 20px;
+}
+
+.weekDay {
+  margin-top: 30px;
+}
+
+.container {
+  background-color: #ffffff59;
+  border-radius: 20px;
+  padding: 1rem;
+  margin-bottom: 30px;
 }

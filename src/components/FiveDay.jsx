@@ -14,17 +14,18 @@ const dayMapper = (element, index) => {
     const iconUrl = `https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`
     return (
         <StyleFiveDayForecast key={index} className={`current-forecast box-shadow`}>
+
             <div className="card box-shadow">
                 <img src={iconUrl} alt="icon" />
                 <span>{moment(element.dt_txt).format('h:mm a')}</span>
-                <p>{element.main.temp.toFixed()}°F</p>
+                <h1>{element.main.temp.toFixed()}°F</h1>
                 <p>{element.weather[0].description.toUpperCase()}</p>
             </div>
         </StyleFiveDayForecast>
     )
 }
 
-const getHumanDay = (date) => {
+export function getHumanDay(date) {
     let machineDate = new Date(date)
     const options = { weekday: "long" }
     return new Intl.DateTimeFormat('en-US', options).format(machineDate);
@@ -32,47 +33,57 @@ const getHumanDay = (date) => {
 }
 
 export default function FiveDay({ data }) {
-    let day1 = data.list.slice(0, 8).map(dayMapper);
-    let day2 = data.list.slice(8, 16).map(dayMapper);
-    let day3 = data.list.slice(16, 24).map(dayMapper);
-    let day4 = data.list.slice(24, 32).map(dayMapper);
-    let day5 = data.list.slice(32, 40).map(dayMapper);
+    // let day1 = data.list.slice(0, 8).map(dayMapper);
+    let day2 = data.list.slice(1, 9).map(dayMapper);
+    let day3 = data.list.slice(9, 17).map(dayMapper);
+    let day4 = data.list.slice(17, 25).map(dayMapper);
+    let day5 = data.list.slice(25, 33).map(dayMapper);
+    let day6 = data.list.slice(33, 40).map(dayMapper);
 
     // this is the indiviual day
     return (
         <div>
 
-            <h2>{getHumanDay(data.list[0].dt_txt)}</h2>
-            <div className="day1">
-                {day1}
+            <div className="container" >
+                <h2 className="weekDay">{getHumanDay(data.list[1].dt_txt)}</h2>
+                <div className="day2">
+                    {day2}
+                </div>
             </div>
 
-            <h2>{getHumanDay(data.list[8].dt_txt)}</h2>
-            <div className="day2">
-                {day2}
+            <div className="container" >
+                <h2 className="weekDay">{getHumanDay(data.list[9].dt_txt)}</h2>
+                <div className="day3">
+                    {day3}
+                </div>
             </div>
 
-            <h2>{getHumanDay(data.list[16].dt_txt)}</h2>
-            <div className="day3">
-                {day3}
+            <div className="container" >
+                <h2 className="weekDay">{getHumanDay(data.list[17].dt_txt)}</h2>
+                <div className="day4">
+                    {day4}
+                </div>
             </div>
 
-            <h2>{getHumanDay(data.list[24].dt_txt)}</h2>
-            <div className="day4">
-                {day4}
+            <div className="container" >
+                <h2 className="weekDay">{getHumanDay(data.list[25].dt_txt)}</h2>
+                <div className="day5">
+                    {day5}
+                </div>
             </div>
 
-            <h2>{getHumanDay(data.list[32].dt_txt)}</h2>
-            <div className="day5">
-                {day5}
+            <div className="container" >
+                <h2 className="weekDay">{getHumanDay(data.list[33].dt_txt)}</h2>
+                <div className="day6">
+                    {day6}
+                </div>
             </div>
         </div>
     )
 }
 
 const StyleFiveDayForecast = styled.div`
-        display: flex;
-        margin-top: 40px;
+    display: flex;
 
     .card {
         padding: 20px;
@@ -82,5 +93,18 @@ const StyleFiveDayForecast = styled.div`
         align-items: right;
         background: #0f0f0f;
         color: white;
+
+        span {
+            text-align: center;
+        }
+        h1 {
+           text-align: center;
+            font-size: 1rem;
+        }
+
+        p {
+            text-align: center;
+            font-size: .8rem
+        }
     }
 `
