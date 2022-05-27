@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+/* iPad [portrait + landscape] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.selector-01 { margin: 10px; }
+	.selector-02 { margin: 10px; }
+	.selector-03 { margin: 10px; }
+}
+
+/* iPhone [portrait + landscape] */
+@media only screen and (max-device-width: 480px) {
+	.selector-01 { margin: 10px; }
+	.selector-02 { margin: 10px; }
+	.selector-03 { margin: 10px; }
+}
+
 
 body {
   background: url('./assets/barren_by_josegoncalo_de24e2u.png') no-repeat center center/cover;
