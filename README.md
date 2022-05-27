@@ -22,5 +22,16 @@ You may also see any lint errors in the console.
 - ~~divide each 3 hr incremenent of a day from the api into individual day divs~~
 - ~~style the cards for each 3hr increment with each parent day div~~
 - ~~display the correct days of the week~~
-- optimize and styling
+- ~~optimize and styling~~
+- add current weather hook
+- select a better hook for the 5 day forecast (?)
+- create a user table
+- add user registration forms
+- add user authentication 
+- user can add a city as their default forecast
+- user can select favorite cities
+- user can compar favorites with default
+
+
+
 

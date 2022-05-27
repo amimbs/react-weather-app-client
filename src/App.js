@@ -19,7 +19,7 @@ export default function App() {
     // there has to be a wrapper here because react can only return a single url element
     <>
       <CurrentForecast data={data} />
-      <h2 style={{margin: "50px 0"}} className="forecast">Forecast</h2>
+      <h2 style={{ margin: "50px 0" }} className="forecast">Forecast</h2>
       <FiveDay data={data} />
     </>
   );

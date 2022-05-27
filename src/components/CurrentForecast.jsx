@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import image from "../assets/dusty.jpg"
 import image from "../assets/city.bmp"
 import { getHumanDay } from "./FiveDay";
 
@@ -114,7 +115,9 @@ const StyledCurrentForecast = styled.div`
         }
         img {
             margin-bottom: 10px;
-            width: 200px;
+            width: 150px;
+            height: 100px;
+            border-radius: 20px;
         }
     }
 

@@ -4,10 +4,15 @@
   box-sizing: border-box;
 }
 
+
 body {
-  background: url('./assets/desert_by_josegoncalo_de1sggg.png') no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
+  background: url('./assets/barren_by_josegoncalo_de24e2u.png') no-repeat center center/cover;
+  display: block;
+  align-content: center;
+  min-height: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
 }
 
 .box-shadow {
@@ -21,48 +26,29 @@ body {
   width: 100%;
   max-width: 800px;
   height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1{
+  color: white;
+  font-size: 3rem;
 }
 
 .forecast{
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
+  color: black;
 }
 
-.day1 {
-  display: flex;
+.day {
+  overflow-x: scroll;
   overflow-y: hidden;
+  max-width: 100%;
+  display: flex;
   padding: 20px;
 }
 
-.day2 {
-  display: flex;
-  overflow-y: hidden;
-  padding: 20px;
-}
-
-.day3 {
-  display: flex;
-  overflow-y: hidden;
-  padding: 20px;
-}
-
-.day4 {
-  display: flex;
-  overflow-y: hidden;
-  padding: 20px;
-}
-
-.day5 {
-  display: flex;
-  overflow-y: hidden;
-  padding: 20px;
-}
-
-.day6 {
-  display: flex;
-  overflow-y: hidden;
-  padding: 20px;
-}
 
 .weekDay {
   margin-top: 30px;
@@ -74,3 +60,4 @@ body {
   padding: 1rem;
   margin-bottom: 30px;
 }
+
