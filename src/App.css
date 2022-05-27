@@ -18,6 +18,13 @@
 	.selector-03 { margin: 10px; }
 }
 
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */ 
+}
+
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */ 
+}
 
 body {
   background: url('./assets/barren_by_josegoncalo_de24e2u.png') no-repeat center center/cover;
