@@ -2,12 +2,6 @@ import styled from "styled-components";
 import React from "react";
 import moment from "moment";
 
-// day1:0 - 7 , 
-// day2: 8 - 15, 
-// day3: 16-24, 
-// day4: 25 - 32, 
-// day5:33 - 40
-
 //call backk function for each day
 const dayMapper = (element, index) => {
 

@@ -1,38 +1,38 @@
-import { useState } from 'react';
-import './App.css';
-import SearchBar from './components/SearchBar'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import apiRequest from './hooks/apiRequest';
-import CurrentForecast from './components/CurrentForecast';
-import FiveDay from './components/FiveDay';
+import { useEffect, useState } from 'react';
+// import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import axios from 'axios';
+import Home from './components/Home';
+import ErroPage from './components/ErrorPage';
+
+//bootstrap imports
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+
 
 
 export default function App() {
 
-
-  const [queryResult, setQueryResult] = useState('Atlanta')
-
-  const { data, loading } = apiRequest(queryResult)
-
-  const body = Object.keys(data).length !== 0 && (
-    // there has to be a wrapper here because react can only return a single url element
-    <>
-      <CurrentForecast data={data} />
-      <h2 style={{ margin: "50px 0" }} className="forecast">Forecast</h2>
-      <FiveDay data={data} />
-    </>
-  );
-
-  const loadingDiv = <div className="loadingDiv">Loading . . .</div>
-
   return (
-    <div className="App">
-      <ToastContainer />
-      <h1 style={{ margin: "30px 0px" }}>Weather APP</h1>
-      <SearchBar setQueryResult={setQueryResult} />
-      {loading ? loadingDiv : body}
-    </div>
+    <Router>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#Login">Login</Nav.Link>
+            <Nav.Link href="#Register">Register</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/Login'></Route>
+        <Route path='/Register'></Route>
+        <Route path='*' element={<ErroPage />}></Route>
+      </Routes>
+    </Router>
   );
 }
 
