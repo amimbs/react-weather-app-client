@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <Router>
-      <Navbar bg="dark" variant="dark">
+      {/* <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
@@ -25,7 +25,7 @@ export default function App() {
             <Nav.Link href="#Register">Register</Nav.Link>
           </Nav>
         </Container>
-      </Navbar>
+      </Navbar> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/Login'></Route>
