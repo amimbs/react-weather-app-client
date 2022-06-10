@@ -38,35 +38,35 @@ export default function FiveDay({ data }) {
     return (
         <div>
 
-            <div className="container" >
+            <div className="weatherwindows" >
                 <h2 className="weekDay">{getHumanDay(data.list[1].dt_txt)}</h2>
                 <div className="day">
                     {day2}
                 </div>
             </div>
 
-            <div className="container" >
+            <div className="weatherwindows" >
                 <h2 className="weekDay">{getHumanDay(data.list[9].dt_txt)}</h2>
                 <div className="day">
                     {day3}
                 </div>
             </div>
 
-            <div className="container" >
+            <div className="weatherwindows" >
                 <h2 className="weekDay">{getHumanDay(data.list[17].dt_txt)}</h2>
                 <div className="day">
                     {day4}
                 </div>
             </div>
 
-            <div className="container" >
+            <div className="weatherwindows" >
                 <h2 className="weekDay">{getHumanDay(data.list[25].dt_txt)}</h2>
                 <div className="day">
                     {day5}
                 </div>
             </div>
 
-            <div className="container" >
+            <div className="weatherwindows" >
                 <h2 className="weekDay">{getHumanDay(data.list[33].dt_txt)}</h2>
                 <div className="day">
                     {day6}

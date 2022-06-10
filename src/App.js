@@ -1,36 +1,30 @@
-import { useEffect, useState } from 'react';
-// import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import axios from 'axios';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
 import Home from './components/Home';
 import ErroPage from './components/ErrorPage';
-
-//bootstrap imports
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-
+import Register from './components/Register';
+import Login from './components/Login';
+import Navigation from "./components/NavBar";
+import LeftLink from "./components/LeftLink";
 
 
 export default function App() {
 
   return (
     <Router>
-      {/* <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#Login">Login</Nav.Link>
-            <Nav.Link href="#Register">Register</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar> */}
+      <Navigation leftLink={<LeftLink />}/>
+      {/* Routes tries to find the first and only componet that we specify */}
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/Login'></Route>
-        <Route path='/Register'></Route>
-        <Route path='*' element={<ErroPage />}></Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Register' element={<Register />} />
+        <Route path='*' element={<ErroPage />} />
       </Routes>
     </Router>
   );
