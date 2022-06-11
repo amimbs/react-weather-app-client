@@ -25,10 +25,6 @@ export default function Home() {
 
     const loadingDiv = <div className="loadingDiv">Loading . . .</div>
 
-    // need a 3 divs, 
-    // app
-    // search Bar
-    // and loading switching to app
     return (
         <div className="App">
             <ToastContainer />
