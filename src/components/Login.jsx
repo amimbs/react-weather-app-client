@@ -1,39 +1,51 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-function Login() {
+export default function Login() {
+    const [userName, setUserName] = useState('');
+    const [password, setPassword] = useState('');
 
-  const [userName, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    axios.defaults.withCredentials = true;
 
-  const login = () => {
-    const data = {
-      userName: userName,
-      password: password
+    const login = async () => {
+        try {
+            await axios.post("http://localhost:3001/register/login", {
+                userName: userName,
+                password: password
+            });
+        } catch (error) {
+          console.log(error)
+        }
+        finally {
+            setUserName('');
+            setPassword('');
+        };
     };
 
-    axios.post('http://localhost:3001/register/login', data).then((res) => {
-      console.log(res.data)
-    });
-  }
+    return (
+        <div className="Login">
 
-  return (
-    <div>
-      <input
-        type="text"
-        onChange={(e) => {
-          setUsername(e.target.value);
-        }}
-      />
-      <input
-        type="password"
-        onChange={(e) => {
-          setPassword(e.target.value);
-        }}
-      />
-      <button onClick={login}>Login</button>
-    </div>
-  )
-}
+            <h1>Login</h1>
 
-export default Login
+            <div>
+                <input
+                    type="text"
+                    placeholder="Username"
+                    value={userName}
+                    onChange={(e) => { setUserName(e.target.value) }}>
+                </input>
+
+                <input
+                    type="text"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => { setPassword(e.target.value) }}>
+                </input>
+
+                <button onClick={login}> Login </button>
+            </div>
+
+        </div>
+    );
+};
