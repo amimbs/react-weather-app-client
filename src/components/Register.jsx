@@ -48,7 +48,7 @@ function Register() {
       })
   })
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     let user = {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -57,9 +57,8 @@ function Register() {
       password: data.password
     }
 
-    axios.post("http://localhost:3001/register", user).then((res) => {
+    const res = await axios.post("http://localhost:3001/register", user)
       console.log(res.request.status)
-    })
   }
 
   return (

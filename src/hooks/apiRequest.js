@@ -15,6 +15,7 @@ const ApiRequest = (queryResults) => {
             axios.get(url).then((res) => {
                 setLoading(false);
                 setData(res.data);
+                console.log(res.data)
             }).catch((err) => {
                 toast.error('Please Check Your Damn Spelling');
                 setLoading(false);

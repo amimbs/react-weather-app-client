@@ -1,4 +1,4 @@
-# Wetaher App
+# Weather App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -26,8 +26,8 @@ You may also see any lint errors in the console.
 - add current weather hook
 - select a better hook for the 5 day forecast (?)
 - create a user table
-- add user registration forms
-- add user authentication 
+- ~~add user registration forms~~
+- ~~add user authentication~~ 
 - user can add a city as their default forecast
 - user can select favorite cities
 - user can compar favorites with default

@@ -9,13 +9,14 @@ import Home from './components/Home';
 import ErroPage from './components/ErrorPage';
 import Register from './components/Register';
 import Login from './components/Login';
+import { ToastContainer } from 'react-toastify';
 
 
 export default function App() {
 
   return (
     <Router>
-
+      <ToastContainer />
       {/* Routes tries to find the first and only componet that we specify */}
       <nav className="navbar">
         <Link to="/">Home</Link>

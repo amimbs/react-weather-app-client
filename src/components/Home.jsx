@@ -2,7 +2,6 @@ import '../App.css';
 import React from "react";
 import { useState } from 'react';
 import SearchBar from './SearchBar'
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import apiRequest from '../hooks/apiRequest';
 import CurrentForecast from './CurrentForecast';
@@ -27,10 +26,9 @@ export default function Home() {
 
     return (
         <div className="App">
-            <ToastContainer />
             <h1 style={{ margin: "30px 0px" }}>Weather APP</h1>
             <SearchBar setQueryResult={setQueryResult} />
             {loading ? loadingDiv : bodyDiv}
         </div>
-    )
+    );
 }

@@ -15,7 +15,7 @@ export default function Login() {
                 password: password
             });
         } catch (error) {
-          console.log(error)
+          toast.error(error.response.data.error)
         }
         finally {
             setUserName('');
@@ -37,7 +37,7 @@ export default function Login() {
                 </input>
 
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => { setPassword(e.target.value) }}>
