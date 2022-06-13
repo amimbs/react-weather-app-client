@@ -10,15 +10,15 @@ import FiveDay from './FiveDay';
 export default function Home() {
     const [queryResult, setQueryResult] = useState('Atlanta')
 
-    const { data, loading } = apiRequest(queryResult)
+    const { fiveDay, current, loading } = apiRequest(queryResult)
 
     //rename this to bodydiv
-    const bodyDiv = Object.keys(data).length !== 0 && (
+    const bodyDiv = Object.keys(fiveDay, current).length !== 0 && (
         // there has to be a wrapper here because react can only return a single url element
         <>
-            <CurrentForecast data={data} />
+            <CurrentForecast current={current} />
             <h2 style={{ margin: "50px 0" }} className="forecast">Forecast</h2>
-            <FiveDay data={data} />
+            <FiveDay fiveDay={fiveDay} />
         </>
     );
 

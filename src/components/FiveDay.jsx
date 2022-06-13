@@ -26,48 +26,48 @@ export function getHumanDay(date) {
 
 }
 
-export default function FiveDay({ data }) {
-    // let day1 = data.list.slice(0, 8).map(dayMapper);
-    let day2 = data.list.slice(1, 9).map(dayMapper);
-    let day3 = data.list.slice(9, 17).map(dayMapper);
-    let day4 = data.list.slice(17, 25).map(dayMapper);
-    let day5 = data.list.slice(25, 33).map(dayMapper);
-    let day6 = data.list.slice(33, 40).map(dayMapper);
+export default function FiveDay({ fiveDay }) {
+    // let day1 = fiveDay.list.slice(0, 8).map(dayMapper);
+    let day2 = fiveDay.list.slice(1, 9).map(dayMapper);
+    let day3 = fiveDay.list.slice(9, 17).map(dayMapper);
+    let day4 = fiveDay.list.slice(17, 25).map(dayMapper);
+    let day5 = fiveDay.list.slice(25, 33).map(dayMapper);
+    let day6 = fiveDay.list.slice(33, 40).map(dayMapper);
 
     // this is the indiviual day
     return (
         <div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(data.list[1].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[1].dt_txt)}</h2>
                 <div className="day">
                     {day2}
                 </div>
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(data.list[9].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[9].dt_txt)}</h2>
                 <div className="day">
                     {day3}
                 </div>
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(data.list[17].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[17].dt_txt)}</h2>
                 <div className="day">
                     {day4}
                 </div>
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(data.list[25].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[25].dt_txt)}</h2>
                 <div className="day">
                     {day5}
                 </div>
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(data.list[33].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[33].dt_txt)}</h2>
                 <div className="day">
                     {day6}
                 </div>

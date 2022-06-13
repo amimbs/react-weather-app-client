@@ -6,28 +6,27 @@ import { getHumanDay } from "./FiveDay";
 
 
 
-export default function CurrentForecast({ data }) {
-    const currentData = data.list[0];
-    const precipitation = currentData.rain ? (currentData.rain[Object.keys(currentData.rain)[0]] / 25.4) : 0;
-    let date = new Date(currentData.dt_txt)
+export default function CurrentForecast({ current }) {
+    const precipitation = current.rain ? (current.rain[Object.keys(current.rain)[0]] / 25.4) : 0;
+    let date = new Date(current.dt_txt)
     const options = { weekDay: "long" }
     let day = new Intl.DateTimeFormat('en-US', options).format(date);
 
     return (
         <StyledCurrentForecast>
             <div className="current-forecast box-shadow">
-                <img src={`https://openweathermap.org/img/wn/${currentData.weather[0].icon}@2x.png`} alt="icon" />
-                <h1>{currentData.main.temp.toFixed()}°F</h1>
+                <img src={`https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`} alt="icon" />
+                <h1>{current.main.temp.toFixed()}°F</h1>
 
                 <div className="content">
                     <h5>
                         Precipitation Volumn: {precipitation.toFixed()} in
                     </h5>
                     <h5>
-                        Wind Speed: {currentData.wind.speed} MPH
+                        Wind Speed: {current.wind.speed} MPH
                     </h5>
                     <h5>
-                        Humidity: {currentData.main.humidity}%
+                        Humidity: {current.main.humidity}%
                     </h5>
 
                 </div>
@@ -35,17 +34,17 @@ export default function CurrentForecast({ data }) {
 
             <div className="location box-shadow">
                 <h2>
-                    {data.city.name}
+                    {current.city.name}
                 </h2>
                 <h3>
-                    {data.city.country}
+                    {current.city.country}
                 </h3>
                 <img src={image} alt="city" />
                 <h4>
                     {day}
                 </h4>
                 <h5>
-                    {getHumanDay(currentData.dt_txt)}
+                    {getHumanDay(current.dt_txt)}
                 </h5>
             </div>
 

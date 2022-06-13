@@ -4,26 +4,35 @@ import { toast } from "react-toastify";
 
 const ApiRequest = (queryResults) => {
 
-    const [data, setData] = useState({});
+    const [fiveDay, setFiveDay] = useState({});
     const [loading, setLoading] = useState(false);
+    const [current, setCurrent] = useState({});
 
     useEffect(() => {
-        const apiKey = process.env.REACT_APP_WEATHER_KEY;
-        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${queryResults}&appid=${apiKey}&units=imperial&cnt=40`;
-        if (queryResults !== "") {
-            setLoading(true);
-            axios.get(url).then((res) => {
-                setLoading(false);
-                setData(res.data);
-                console.log(res.data)
-            }).catch((err) => {
+        async function weatherApp() {
+            try {
+                const apiKey = process.env.REACT_APP_WEATHER_KEY;
+                const fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${queryResults}&appid=${apiKey}&units=imperial&cnt=40`;
+                const currentURL = `https://api.openweathermap.org/data/2.5/weather?q=${queryResults}&appid=${apiKey}&units=imperial`;
+                if (queryResults !== "") {
+                    setLoading(true);
+                    const fiveDayRes = await axios.get(fiveDayURL);
+        
+                    setFiveDay(fiveDayRes.data);
+        
+                    const currentRes = await axios.get(currentURL);
+                    setCurrent(currentRes.data)
+        
+                    setLoading(false);
+                };
+            } catch (err) {
                 toast.error('Please Check Your Damn Spelling');
                 setLoading(false);
-            });
-        };
+            }
+        }
+        weatherApp();
     }, [queryResults]);
-
-    return { loading, data }
+    return { loading, fiveDay, current }
 };
 
 export default ApiRequest;
