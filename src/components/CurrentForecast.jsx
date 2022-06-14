@@ -7,10 +7,24 @@ import { getHumanDay } from "./FiveDay";
 
 
 export default function CurrentForecast({ current }) {
-    const precipitation = current.rain ? (current.rain[Object.keys(current.rain)[0]] / 25.4) : 0;
-    let date = new Date(current.dt_txt)
-    const options = { weekDay: "long" }
-    let day = new Intl.DateTimeFormat('en-US', options).format(date);
+    console.log(current)
+    const precipitation = current.rain && current.rain['1h'] ? (current.rain['1h'] / 25.4) : 0;
+    // (current.rain[Object.keys(current.rain)[0]] / 25.4) : 0;
+    // let date = new Date(current.dt_txt)
+    // const options = { weekDay: "long" }
+    // let day = new Intl.DateTimeFormat('en-US', options).format(date);
+
+    const formatPrecip = () => {
+
+        if (precipitation === 0) {
+            return '0 in'
+        } else if (precipitation < 1) {
+            return '< 1 in'
+        } else {
+            return precipitation.toFixed() + 'in'
+        };
+    };
+
 
     return (
         <StyledCurrentForecast>
@@ -20,7 +34,7 @@ export default function CurrentForecast({ current }) {
 
                 <div className="content">
                     <h5>
-                        Precipitation Volumn: {precipitation.toFixed()} in
+                        Precipitation Volumn: {formatPrecip()}
                     </h5>
                     <h5>
                         Wind Speed: {current.wind.speed} MPH
@@ -34,18 +48,18 @@ export default function CurrentForecast({ current }) {
 
             <div className="location box-shadow">
                 <h2>
-                    {current.city.name}
+                    {current.name}
                 </h2>
-                <h3>
+                {/* <h3>
                     {current.city.country}
-                </h3>
+                </h3> */}
                 <img src={image} alt="city" />
-                <h4>
+                {/* <h4>
                     {day}
-                </h4>
-                <h5>
+                </h4> */}
+                {/* <h5>
                     {getHumanDay(current.dt_txt)}
-                </h5>
+                </h5> */}
             </div>
 
         </StyledCurrentForecast>

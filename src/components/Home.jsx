@@ -8,7 +8,7 @@ import CurrentForecast from './CurrentForecast';
 import FiveDay from './FiveDay';
 
 export default function Home() {
-    const [queryResult, setQueryResult] = useState('Atlanta')
+    const [queryResult, setQueryResult] = useState('Kona')
 
     const { fiveDay, current, loading } = apiRequest(queryResult)
 
