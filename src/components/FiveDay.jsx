@@ -11,7 +11,7 @@ const dayMapper = (element, index) => {
 
             <div className="card box-shadow">
                 <img src={iconUrl} alt="icon" />
-                <span>{moment(element.dt_txt).format('h:mm a')}</span>
+                <span id="time">{moment(element.dt_txt).format('h:mm a')}</span>
                 <h1>{element.main.temp.toFixed()}°F</h1>
                 <p>{element.weather[0].description.toUpperCase()}</p>
             </div>
@@ -78,6 +78,10 @@ export default function FiveDay({ fiveDay }) {
 
 const StyleFiveDayForecast = styled.div`
     display: flex;
+    
+    #time {
+        color: white
+    }
 
     .card {
         padding: 20px;
