@@ -1,27 +1,25 @@
+import moment from "moment";
 import React from "react";
 import styled from "styled-components";
-// import image from "../assets/dusty.jpg"
 import image from "../assets/city.bmp"
+// import { getHumanDay } from "./FiveDay";
 
 
 
 export default function CurrentForecast({ current }) {
-    const precipitation = current.current.precip_in;
-    console.log(current.location.localtime)
-    let apidate = new Date(current.location.localtime)
-    let computerDate = apidate.getTime()/1000
-    console.log(computerDate)
-    let humanDate = new Date(computerDate * 1000);
-    let readableDate = humanDate.toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});;
+    const precipitation = current.rain && current.rain['1h'] ? (current.rain['1h'] / 25.4) : 0;
+    const date = moment.unix(current.dt)
+    const readableDate = date.format('dddd MMMM Do YYYY')
+
 
     const formatPrecip = () => {
 
         if (precipitation === 0) {
-            return '0 in';
+            return '0 in'
         } else if (precipitation < 1) {
-            return '< 1 in';
+            return '< 1 in'
         } else {
-            return precipitation.toFixed() + 'in';
+            return precipitation.toFixed() + 'in'
         };
     };
 
@@ -29,22 +27,19 @@ export default function CurrentForecast({ current }) {
     return (
         <StyledCurrentForecast>
             <div className="current-forecast box-shadow">
-
-                <img src={current.current.condition.icon} alt="icon" />
-
-                <h1>{current.current.temp_f.toFixed()}°F</h1>
+                <img src={`https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`} alt="icon" />
+                <h1>{current.main.temp.toFixed()}°F</h1>
+                <h4>{current.weather[0].description}</h4>
 
                 <div className="content">
                     <h5>
                         Precipitation Volumn: {formatPrecip()}
                     </h5>
-
                     <h5>
-                        Wind Speed: {current.current.wind_mph.toFixed()} MPH
+                        Wind Speed: {current.wind.speed.toFixed()} MPH
                     </h5>
-
                     <h5>
-                        Humidity: {current.current.humidity}%
+                        Humidity: {current.main.humidity}%
                     </h5>
 
                 </div>
@@ -52,19 +47,19 @@ export default function CurrentForecast({ current }) {
 
             <div className="location box-shadow">
                 <h2>
-                    {current.location.name}
+                    {current.name}
                 </h2>
                 <h3>
-                    {current.location.region}
+                    {current.sys.country}
                 </h3>
-                <h4>
-                    {current.location.country}
-                </h4>
-
                 <img src={image} alt="city" />
-
-                <h5>
+                <h4>
                     {readableDate}
+                </h4>
+                <h5>
+                    Lat: {current.coord.lat}
+                    <br/>
+                    Lon: {current.coord.lon}
                 </h5>
             </div>
 
@@ -94,7 +89,13 @@ const StyledCurrentForecast = styled.div`
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 30px
+            margin-bottom: 10px
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 10px;
         }
 
         .content {
@@ -121,15 +122,14 @@ const StyledCurrentForecast = styled.div`
             margin-bottom: 10px;
         }
         h4 {
-            text-align: right;
+            text-align: center;
             font-size: 1rem;
             margin-bottom: 10px;
             font-weight: 500;
         }
         h5 {
             text-align: center;
-            font-size: 1rem;
-            margin-bottom: 10px;
+            font-size: .95rem;
             font-weight: 500;
         }
         img {
