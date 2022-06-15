@@ -29,7 +29,8 @@ You may also see any lint errors in the console.
 - ~~create a user table~~
 - ~~add user registration forms~~
 - ~~add user authentication~~ 
-- style the forms
+- ~~style the forms~~
+- ~~after consideration switched back to openweatherapi~~
 - add JWT for user authorization
 - user can add a city as their default forecast
 - user can select favorite cities
