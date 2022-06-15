@@ -2,8 +2,10 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import styled from "styled-components";
 
-function Register() {
+
+export default function Register() {
 
   const initialValues = {
     firstName: "",
@@ -58,65 +60,122 @@ function Register() {
     }
 
     const res = await axios.post("http://localhost:3001/register", user)
-      console.log(res.request.status)
+    console.log(res.request.status)
   }
 
   return (
+    <StyledRegister>
+      <div className="Register">
+        <h1 className="">Register</h1>
+        <div className="db"></div>
+        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+          <Form className="formContainer">
+            <label> First Name: </label>
+            <ErrorMessage name="firstName" component="span" />
+            <Field
+              id="inputField"
+              name="firstName"
+              placeholder="Ex: John" />
 
-    <div className="register">
-      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-        <Form className="formContainer">
-          <label> First Name </label>
-          <ErrorMessage name="firstName" component="span" />
-          <Field
-            id="inputFirstName"
-            name="firstName"
-            placeholder="Ex: John" />
+            <label> Last Name: </label>
+            <ErrorMessage name="lastName" component="span" />
+            <Field
+              id="inputField"
+              name="lastName"
+              placeholder="Ex: Smith" />
 
-          <label> Last Name </label>
-          <ErrorMessage name="lastName" component="span" />
-          <Field
-            id="inputLastName"
-            name="lastName"
-            placeholder="Ex: Smith" />
+            <label> Email: </label>
+            <ErrorMessage name="email" component="span" />
+            <Field
+              id="inputField"
+              name="email"
+              placeholder="Ex: jsmithy@hotmail.com" />
 
-          <label> Email </label>
-          <ErrorMessage name="email" component="span" />
-          <Field
-            id="inputEmail"
-            name="email"
-            placeholder="Ex: jsmithy@hotmail.com" />
+            <label> Username: </label>
+            <ErrorMessage name="userName" component="span" />
+            <Field
+              id="inputField"
+              name="userName"
+              placeholder="Ex: jsmith123" />
 
-          <label> Username </label>
-          <ErrorMessage name="userName" component="span" />
-          <Field
-            id="inputUserName"
-            name="userName"
-            placeholder="Ex: jsmith123" />
+            <label> Password: </label>
+            <ErrorMessage name="password" component="span" />
+            <Field
+              autoComplete="off"
+              type="password"
+              id="inputField"
+              name="password"
+              placeholder="Ex: jb007" />
 
-          <label> Password </label>
-          <ErrorMessage name="password" component="span" />
-          <Field
-            autoComplete="off"
-            type="password"
-            id="inputPassword"
-            name="password"
-            placeholder="Ex: jb007" />
+            <label> Confirm Password: </label>
+            <ErrorMessage name="confirmPassword" component="span" />
+            <Field
+              autoComplete="off"
+              type="password"
+              id="inputField"
+              name="confirmPassword"
+              placeholder="Ex: jb007" />
 
-          <label> Confirm Password </label>
-          <ErrorMessage name="confirmPassword" component="span" />
-          <Field
-            autoComplete="off"
-            type="password"
-            id="inputConfirmPassword"
-            name="confirmPassword"
-            placeholder="Ex: jb007" />
+            <button type="submit">Create Account</button>
+          </Form>
+        </Formik>
+      </div>
+    </StyledRegister>
+  );
+};
 
-          <button type="submit">Create Account</button>
-        </Form>
-      </Formik>
-    </div>
-  )
-}
+const StyledRegister = styled.div`
 
-export default Register
+  .Register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .Register h1 {
+    margin-bottom: 10px;
+  }
+
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    border: 5px solid dodgerblue;
+    border-radius: 5px;
+    background-color: white
+  }
+  
+  .formContainer label {
+    font-weight: bold
+  }
+
+  .formContainer span {
+    color: red
+  }
+
+  .formContainer #inputField {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+
+  .formContainer button {
+    margin-top: 15px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .formContainer button:hover {
+    cursor: pointer;
+    background-color: #d6d6d6;
+  }
+
+`

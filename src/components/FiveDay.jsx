@@ -27,19 +27,18 @@ export function getHumanDay(date) {
 }
 
 export default function FiveDay({ fiveDay }) {
-    // let day1 = fiveDay.list.slice(0, 8).map(dayMapper);
-    let day2 = fiveDay.list.slice(1, 9).map(dayMapper);
-    let day3 = fiveDay.list.slice(9, 17).map(dayMapper);
-    let day4 = fiveDay.list.slice(17, 25).map(dayMapper);
-    let day5 = fiveDay.list.slice(25, 33).map(dayMapper);
-    let day6 = fiveDay.list.slice(33, 40).map(dayMapper);
+    let day2 = fiveDay.list.slice(0, 8).map(dayMapper);
+    let day3 = fiveDay.list.slice(8, 16).map(dayMapper);
+    let day4 = fiveDay.list.slice(16, 24).map(dayMapper);
+    let day5 = fiveDay.list.slice(24, 32).map(dayMapper);
+    let day6 = fiveDay.list.slice(32, 40).map(dayMapper);
 
     // this is the indiviual day
     return (
         <div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(fiveDay.list[1].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[0].dt_txt)}</h2>
                 <div className="day">
                     {day2}
                 </div>
@@ -53,21 +52,21 @@ export default function FiveDay({ fiveDay }) {
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(fiveDay.list[17].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[16].dt_txt)}</h2>
                 <div className="day">
                     {day4}
                 </div>
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(fiveDay.list[25].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[24].dt_txt)}</h2>
                 <div className="day">
                     {day5}
                 </div>
             </div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(fiveDay.list[33].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[32].dt_txt)}</h2>
                 <div className="day">
                     {day6}
                 </div>
