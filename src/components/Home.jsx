@@ -19,7 +19,7 @@ export default function Home() {
         // there has to be a wrapper here because react can only return a single url element
         <>
             <CurrentForecast current={current} />
-            <h2 style={{ margin: "50px 0" }} className="forecast">Forecast</h2>
+            <h2 style={{ margin: "50px 0", color: 'white' }} className="forecast">Forecast</h2>
             <FiveDay fiveDay={fiveDay} />
         </>
     );
