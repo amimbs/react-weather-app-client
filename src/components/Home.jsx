@@ -1,6 +1,5 @@
 import '../App.css';
 import React from "react";
-import { useState } from 'react';
 import SearchBar from './SearchBar'
 import 'react-toastify/dist/ReactToastify.css';
 import apiRequest from '../hooks/apiRequest';
@@ -10,8 +9,9 @@ import image from '../assets/barren_by_josegoncalo_de24e2u.png'
 
 import FiveDay from './FiveDay';
 
-export default function Home() {
-    const [queryResult, setQueryResult] = useState('Atlanta')
+export default function Home({setQueryResult, queryResult}) {
+    // move state to the app, through props pass down the value and the function
+    // const [queryResult, setQueryResult] = useState('Atlanta')
 
     const { fiveDay, current, loading } = apiRequest(queryResult)
 

@@ -6,9 +6,11 @@ export default function SearchBar({setQueryResult}) {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        setQueryResult(searchQuery);
-        setSearchQuery('')
-    }
+        if (searchQuery !== '') {
+            setQueryResult(searchQuery);
+            setSearchQuery('')
+        };
+    };
 
     return (
         <StyledSearchBar>

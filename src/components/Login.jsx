@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import styled from 'styled-components'
 
-export default function Login() {
+export default function Login({setUserLogged}) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
@@ -11,12 +11,14 @@ export default function Login() {
 
     const login = async () => {
         try {
-            await axios.post("http://localhost:3001/register/login", {
+            let response = await axios.post("http://localhost:3001/register/login", {
                 userName: userName,
                 password: password
             });
+            setUserLogged(response.data.foundUser.id);
+            localStorage.setItem('userLogged', response.data.foundUser.id)
         } catch (error) {
-            toast.error(error.response.data.error)
+            toast.error(error.response.data.error);
         }
         finally {
             setUserName('');
