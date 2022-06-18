@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,7 +14,19 @@ import { ToastContainer } from 'react-toastify';
 
 export default function App() {
   const [activeUser, setActiveUser] = useState('');
-  const [queryResult, setQueryResult] = useState('Atlanta')
+  const [queryResult, setQueryResult] = useState('Atlanta');
+
+  useEffect(() => {
+    const localUser = JSON.parse(localStorage.getItem('activeUser'))
+
+    if (!activeUser) {
+      setActiveUser(localUser)
+    };
+
+    if (activeUser && activeUser.defaultCity !== null) {
+      setQueryResult(activeUser.defaultCity);
+    };
+  }, [activeUser])
 
 
   return (
@@ -28,8 +40,8 @@ export default function App() {
       </nav>
 
       <Routes>
-        <Route path='/' element={<Home setQueryResult={setQueryResult} queryResult={queryResult}/>} />
-        <Route path='/Login' element={<Login setActiveUser={setActiveUser} activeUser={activeUser} setQueryResult={setQueryResult}/>} />
+        <Route path='/' element={<Home setQueryResult={setQueryResult} setActiveUser={setActiveUser} queryResult={queryResult} activeUser={activeUser}/>} />
+        <Route path='/Login' element={<Login setActiveUser={setActiveUser} setQueryResult={setQueryResult}/>} />
         <Route path='/Register' element={<Register setQueryResult={setQueryResult}/>} />
         <Route path='*' element={<ErroPage />} />
       </Routes>

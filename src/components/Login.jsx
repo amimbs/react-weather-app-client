@@ -3,20 +3,18 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import styled from 'styled-components'
 
-export default function Login({setUserLogged}) {
+export default function Login({setActiveUser}) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
 
-    axios.defaults.withCredentials = true;
-
     const login = async () => {
         try {
-            let response = await axios.post("http://localhost:3001/register/login", {
+            let response = await axios.post("http://localhost:3001/users/login", {
                 userName: userName,
                 password: password
             });
-            setUserLogged(response.data.foundUser.id);
-            localStorage.setItem('userLogged', response.data.foundUser.id)
+            setActiveUser(response.data.foundUser);
+            localStorage.setItem('activeUser', JSON.stringify(response.data.foundUser))
         } catch (error) {
             toast.error(error.response.data.error);
         }
@@ -77,7 +75,7 @@ const StyledLogin = styled.div`
         padding: 20px;
         border: 5px solid dodgerblue;
         border-radius: 5px;
-        background-color: white
+        background-color: white;
     }
 
     .loginForm label {

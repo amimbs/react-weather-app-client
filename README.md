@@ -27,9 +27,8 @@ You may also see any lint errors in the console.
 - ~~add user registration forms~~
 - ~~add user authentication~~ 
 - ~~style the forms~~
-- user can add a city as their default forecast
-- user can select favorite cities
-- user can compar favorites with default
+- ~~user can add a city as their default forecast~~
+- user can compare cities with default
 
 
 

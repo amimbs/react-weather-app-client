@@ -1,16 +1,13 @@
+import axios from "axios";
 import moment from "moment";
 import React from "react";
 import styled from "styled-components";
 import image from "../assets/city.bmp"
-// import { getHumanDay } from "./FiveDay";
 
-
-
-export default function CurrentForecast({ current }) {
+export default function CurrentForecast({ activeUser, current, setActiveUser }) {
     const precipitation = current.rain && current.rain['1h'] ? (current.rain['1h'] / 25.4) : 0;
     const date = moment.unix(current.dt)
     const readableDate = date.format('dddd MMMM Do YYYY')
-
 
     const formatPrecip = () => {
 
@@ -23,6 +20,22 @@ export default function CurrentForecast({ current }) {
         };
     };
 
+    const setDefaultCity = async () => {
+
+        await axios.post('http://localhost:3001/users/set-default', {
+            defaultCity: current.name,
+            userId: activeUser.id
+        });
+
+        let localUser = {
+            ...activeUser,
+            defaultCity: current.name
+        }
+        setActiveUser(localUser);
+        console.log(localUser)
+        localStorage.setItem('activeUser', JSON.stringify(localUser))
+    };
+    
 
     return (
         <StyledCurrentForecast>
@@ -46,6 +59,7 @@ export default function CurrentForecast({ current }) {
             </div>
 
             <div className="location box-shadow">
+                {activeUser && <button onClick={setDefaultCity}>Set Default</button>}
                 <h2>
                     {current.name}
                 </h2>
@@ -58,7 +72,7 @@ export default function CurrentForecast({ current }) {
                 </h4>
                 <h5>
                     Lat: {current.coord.lat}
-                    <br/>
+                    <br />
                     Lon: {current.coord.lon}
                 </h5>
             </div>
