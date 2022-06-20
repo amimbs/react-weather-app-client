@@ -11,6 +11,8 @@ import image from '../assets/barren_by_josegoncalo_de24e2u.png'
 import SearchBar from './SearchBar'
 
 export default function Home({activeUser, setActiveUser, setQueryResult, queryResult}) {
+
+    console.log(activeUser)
     // move state to the app, through props pass down the value and the function
 
     const { fiveDay, current, loading } = apiRequest(queryResult)
@@ -27,7 +29,7 @@ export default function Home({activeUser, setActiveUser, setQueryResult, queryRe
     const active = 
         <>
             <h5>
-                Hello, Andy
+                Hello, {activeUser.firstName}
             </h5>
         </>
 
