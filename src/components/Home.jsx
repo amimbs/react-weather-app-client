@@ -24,12 +24,23 @@ export default function Home({activeUser, setActiveUser, setQueryResult, queryRe
         </>
     );
 
-    const loadingDiv = <div className="loadingDiv">Loading . . .</div>
+    const active = 
+        <>
+            <h5>
+                Hello, Andy
+            </h5>
+        </>
+
+    const noactive =
+        <></>
+
+    const loadingDiv = <div className="loadingDiv"></div>
 
     return (
         <StyledHome>
             <div className="App">
-                <h1 style={{ margin: "30px 0px" }}>Weather APP</h1>
+                <h1 style={{ margin: "10px 0px" }}>Weather APP</h1>
+                {activeUser ? active : noactive}
                 <SearchBar setQueryResult={setQueryResult} />
                 {loading ? loadingDiv : bodyDiv}
             </div>

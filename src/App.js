@@ -9,6 +9,7 @@ import Home from './components/Home';
 import ErroPage from './components/ErrorPage';
 import Register from './components/Register';
 import Login from './components/Login';
+import Logout from "./components/Logout";
 import { ToastContainer } from 'react-toastify';
 
 
@@ -37,12 +38,14 @@ export default function App() {
         <Link to="/">Home</Link>
         <Link to="/Login" >Login</Link>
         <Link to="/Register">Creat Account</Link>
+        <Link to="Logout">Log-out</Link>
       </nav>
 
       <Routes>
         <Route path='/' element={<Home setQueryResult={setQueryResult} setActiveUser={setActiveUser} queryResult={queryResult} activeUser={activeUser}/>} />
         <Route path='/Login' element={<Login setActiveUser={setActiveUser} setQueryResult={setQueryResult}/>} />
         <Route path='/Register' element={<Register setQueryResult={setQueryResult}/>} />
+        <Route path='Logout' element={<Logout activeUser={activeUser} />}/>
         <Route path='*' element={<ErroPage />} />
       </Routes>
     </Router>

@@ -48,9 +48,11 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
                     <h5>
                         Precipitation Volumn: {formatPrecip()}
                     </h5>
+                    
                     <h5>
                         Wind Speed: {current.wind.speed.toFixed()} MPH
                     </h5>
+
                     <h5>
                         Humidity: {current.main.humidity}%
                     </h5>
@@ -59,22 +61,28 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
             </div>
 
             <div className="location box-shadow">
-                {activeUser && <button onClick={setDefaultCity} className="defaultButton">Set Default</button>}
                 <h2>
                     {current.name}
                 </h2>
+
                 <h3>
                     {current.sys.country}
                 </h3>
+
                 <img src={image} alt="city" />
+                
                 <h4>
                     {readableDate}
                 </h4>
+
                 <h5>
-                    Lat: {current.coord.lat}
+                    Lat: {current.coord.lat.toFixed(2)}
                     <br />
-                    Lon: {current.coord.lon}
+                    Lon: {current.coord.lon.toFixed(2)}
                 </h5>
+
+                {activeUser && <button onClick={setDefaultCity} className="defaultButton">Set Default</button>}
+
             </div>
 
         </StyledCurrentForecast>
@@ -124,6 +132,12 @@ const StyledCurrentForecast = styled.div`
         padding: 20px;
         background: black;
         color: white;
+        
+        .title{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
         h2 {
             text-align: right;
@@ -153,11 +167,13 @@ const StyledCurrentForecast = styled.div`
             border-radius: 20px;
         }
         .defaultButton{
+            font-size: .95rem;
             margin-top: 15px;
             height: 40px;
             border-radius: 5px;
+            padding: 10px;
         }
-        .defaultButton {
+        .defaultButton:hover {
             cursor: pointer;
             background-color: #d6d6d6;
         }

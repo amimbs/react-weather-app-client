@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function Login({setActiveUser}) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const nav = useNavigate()
+
 
     const login = async () => {
         try {
@@ -21,6 +25,7 @@ export default function Login({setActiveUser}) {
         finally {
             setUserName('');
             setPassword('');
+            nav('/');
         };
     };
 
