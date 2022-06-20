@@ -59,7 +59,7 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
             </div>
 
             <div className="location box-shadow">
-                {activeUser && <button onClick={setDefaultCity}>Set Default</button>}
+                {activeUser && <button onClick={setDefaultCity} className="defaultButton">Set Default</button>}
                 <h2>
                     {current.name}
                 </h2>
@@ -151,6 +151,15 @@ const StyledCurrentForecast = styled.div`
             width: 150px;
             height: 100px;
             border-radius: 20px;
+        }
+        .defaultButton{
+            margin-top: 15px;
+            height: 40px;
+            border-radius: 5px;
+        }
+        .defaultButton {
+            cursor: pointer;
+            background-color: #d6d6d6;
         }
     }
 
