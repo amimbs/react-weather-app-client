@@ -12,10 +12,10 @@ import SearchBar from './SearchBar'
 
 export default function Home({activeUser, setActiveUser, setQueryResult, queryResult}) {
 
-    console.log(activeUser)
     // move state to the app, through props pass down the value and the function
 
     const { fiveDay, current, loading } = apiRequest(queryResult)
+    let user =''
 
     const bodyDiv = Object.keys(fiveDay, current).length !== 0 && (
         // there has to be a wrapper here because react can only return a single url element
@@ -28,8 +28,9 @@ export default function Home({activeUser, setActiveUser, setQueryResult, queryRe
 
     const active = 
         <>
+            {(activeUser != null) ? (user = activeUser.firstName) : ''}
             <h5>
-                Hello, {activeUser.firstName}
+                Hello, {user}
             </h5>
         </>
 
@@ -42,7 +43,7 @@ export default function Home({activeUser, setActiveUser, setQueryResult, queryRe
         <StyledHome>
             <div className="App">
                 <h1 style={{ margin: "10px 0px" }}>Weather APP</h1>
-                {activeUser ? active : noactive}
+                {(activeUser != null) ? active : noactive}
                 <SearchBar setQueryResult={setQueryResult} />
                 {loading ? loadingDiv : bodyDiv}
             </div>

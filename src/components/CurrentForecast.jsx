@@ -32,7 +32,6 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
             defaultCity: current.name
         }
         setActiveUser(localUser);
-        console.log(localUser)
         localStorage.setItem('activeUser', JSON.stringify(localUser))
     };
     
@@ -70,7 +69,7 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
                 </h3>
 
                 <img src={image} alt="city" />
-                
+
                 <h4>
                     {readableDate}
                 </h4>
