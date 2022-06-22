@@ -46,8 +46,7 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
                 <div className="content">
                     <h5>
                         Precipitation Volumn: {formatPrecip()}
-                    </h5>
-                    
+                    </h5>                  
                     <h5>
                         Wind Speed: {current.wind.speed.toFixed()} MPH
                     </h5>
