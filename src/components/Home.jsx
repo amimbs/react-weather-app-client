@@ -39,7 +39,7 @@ export default function Home({activeUser, setActiveUser, setQueryResult, queryRe
     return (
         <StyledHome>
             <div className="App">
-                <h1 style={{ margin: "10px 0px" }}>WEATHA</h1>
+                <h1 style={{ margin: "10px 0px" }}>MyWeatha</h1>
                 {(activeUser != null) ? active : noactive}
                 <SearchBar setQueryResult={setQueryResult} />
                 {loading ? loadingDiv : bodyDiv}
