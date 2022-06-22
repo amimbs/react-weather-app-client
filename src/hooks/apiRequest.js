@@ -29,8 +29,8 @@ const ApiRequest = (queryResults) => {
             } catch (err) {
                 toast.error('Please Check Your Damn Spelling');
                 setLoading(false);
-            }
-        }
+            };
+        };
         weatherApp();
     }, [queryResults]);
     return { loading, fiveDay, current }
