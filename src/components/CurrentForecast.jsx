@@ -115,7 +115,7 @@ const StyledCurrentForecast = styled.div`
 
         h4 {
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
@@ -127,6 +127,9 @@ const StyledCurrentForecast = styled.div`
     }
 
     .location {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 350px;
         padding: 20px;
         background: black;
@@ -160,14 +163,15 @@ const StyledCurrentForecast = styled.div`
             font-weight: 500;
         }
         img {
+            display: flex;
+            flex-direction: column;
             margin-bottom: 10px;
-            width: 150px;
-            height: 100px;
+            height: 120px;
             border-radius: 20px;
         }
         .defaultButton{
             font-size: .95rem;
-            margin-top: 15px;
+            margin-top: 0;
             height: 40px;
             border-radius: 5px;
             padding: 10px;
