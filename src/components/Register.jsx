@@ -59,7 +59,7 @@ export default function Register() {
       password: data.password
     }
 
-    const res = await axios.post("http://localhost:3001/users/register", user)
+    await axios.post("http://localhost:3001/users/register", user)
   }
 
   return (
