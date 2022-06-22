@@ -12,13 +12,10 @@ import SearchBar from './SearchBar'
 
 export default function Home({activeUser, setActiveUser, setQueryResult, queryResult}) {
 
-    // move state to the app, through props pass down the value and the function
-
     const { fiveDay, current, loading } = apiRequest(queryResult)
     let user =''
 
     const bodyDiv = Object.keys(fiveDay, current).length !== 0 && (
-        // there has to be a wrapper here because react can only return a single url element
         <>
             <CurrentForecast current={current} activeUser={activeUser} setActiveUser={setActiveUser} />
             <h2 style={{ margin: "50px 0", color: 'white' }} className="forecast">Forecast</h2>
