@@ -38,7 +38,7 @@ export default function App() {
         <Link to="/">Home</Link>
         <Link to="/Login" >Login</Link>
         <Link to="/Register">Creat Account</Link>
-        <Link to="Logout">Log out</Link>
+        {activeUser ? <Link to="Logout">Log out</Link> : ''}
       </nav>
 
       <Routes>
