@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
 
-export default function Login({setActiveUser}) {
+export default function Login({ setActiveUser }) {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const nav = useNavigate()
@@ -13,9 +13,15 @@ export default function Login({setActiveUser}) {
 
     const login = async () => {
         try {
-            let response = await axios.post("https://weathaserverreact.herokuapp.com/users/login", {
-                userName: userName,
-                password: password
+            let response = await fetch("https://weathaserverreact.herokuapp.com/users/login", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    userName: userName,
+                    password: password
+                })
             });
             setActiveUser(response.data.foundUser);
             localStorage.setItem('activeUser', JSON.stringify(response.data.foundUser))
@@ -35,7 +41,7 @@ export default function Login({setActiveUser}) {
                 <h1>Login</h1>
 
                 <div className='loginForm'>
-                <label> Username: </label>
+                    <label> Username: </label>
                     <input
                         type="text"
                         placeholder="Username"
