@@ -51,7 +51,7 @@ REACT_APP_WEATHER_API_KEY = 'your api key'
     - The page will reload when you make changes.\
     - You may also see any lint errors in the console.
 ```console
-npm start
+$ npm start
 ```
 7) If you want to utilize user authentication and authorization you will need to host a server PostgreSQl server.
     - I recommend [ElephantSQL](https://www.elephantsql.com/).
@@ -69,33 +69,33 @@ DB_DATABASE='your database user'
 ```
 10) From your Server directory update sequelize and run a migration
 ```console
-cd react-weather-app-server
-npx sequelize-cli init
-npx sequelize-cli db:migrate
+$ cd react-weather-app-server
+$ npx sequelize-cli init
+$ npx sequelize-cli db:migrate
 ```
 - This will push your download migrations from `react-weather-app-server` to your database
 
 11) Now you can run `nodemon` from your server directory so that any changes you make to your 'server.js' will restart and run instantly.
 ```console
-cd react-weather-app-server
-nodemon server.js
+$ cd react-weather-app-server
+$ nodemon server.js
 ```
 12) Switch to you in your `client folder`
 ```console
-cd ..
-cd react-weather-app-client
+$ cd ..
+$ cd react-weather-app-client
 ```
 13) In `CurrentForecast.jsx`, `Login.jsx`, and `Register.jsx`, switch the axios routes to th elocalhost post routes from `routes/Users.js` and `server.js` in `react-weather-app-server`
 14) Your application is now ready to be run locally!
 15) Just a recap of how to do that from the project directory:
 ```console
-cd react-weather-app-client
-npm start
+$ cd react-weather-app-client
+$ npm start
 ```
 - from a second terminal
 ```console
-cd react-weather-app-server
-nodemon server.js
+$ cd react-weather-app-server
+$ nodemon server.js
 ```
 
 ### Project goals
