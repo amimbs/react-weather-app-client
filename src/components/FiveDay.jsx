@@ -38,7 +38,7 @@ export default function FiveDay({ fiveDay }) {
         <div>
 
             <div className="weatherwindows" >
-                <h2 className="weekDay">{getHumanDay(fiveDay.list[1].dt_txt)}</h2>
+                <h2 className="weekDay">{getHumanDay(fiveDay.list[0].dt_txt)}</h2>
                 <div className="day">
                     {day2}
                 </div>
