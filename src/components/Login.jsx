@@ -13,7 +13,7 @@ export default function Login({setActiveUser}) {
 
     const login = async () => {
         try {
-            let response = await axios.post("https://weathaserverreact.herokuapp.com/users/login", {
+            let response = await axios.post(process.env.REACT_APP_SERVER + "/users/login", {
                 userName: userName,
                 password: password
             });
