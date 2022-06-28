@@ -97,20 +97,20 @@ nodemon server.js
 ```
 
 ### Project goals
-:heavy_check_mark: Uses OpenWeather Api https://openweathermap.org/forecast5#JSON
-:heavy_check_mark: Fetch Data
-:heavy_check_mark: 5 day forecast
-:heavy_check_mark: Implement Toastify for imvalid searches
-:heavy_check_mark: divide each 3 hr incremenent of a day from the api into individual day divs
-:heavy_check_mark: style the cards for each 3hr increment with each parent day div
-:heavy_check_mark: display the correct days of the week
-:heavy_check_mark: optimize and styling
-:heavy_check_mark: create a user table
-:heavy_check_mark: add user registration forms
-:heavy_check_mark: add user authentication 
-:heavy_check_mark: add user authorization
-:heavy_check_mark: style the forms
-:heavy_check_mark: user can add a city as their default forecast
+- :heavy_check_mark: Uses OpenWeather Api https://openweathermap.org/forecast5#JSON
+- :heavy_check_mark: Fetch Data
+- :heavy_check_mark: 5 day forecast
+- :heavy_check_mark: Implement Toastify for imvalid searches
+- :heavy_check_mark: divide each 3 hr incremenent of a day from the api into individual day divs
+- :heavy_check_mark: style the cards for each 3hr increment with each parent day div
+- :heavy_check_mark: display the correct days of the week
+- :heavy_check_mark: optimize and styling
+- :heavy_check_mark: create a user table
+- :heavy_check_mark: add user registration forms
+- :heavy_check_mark: add user authentication 
+- :heavy_check_mark: add user authorization
+- :heavy_check_mark: style the forms
+- :heavy_check_mark: user can add a city as their default forecast
 
 
 
