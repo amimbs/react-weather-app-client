@@ -4,12 +4,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Table of Contents
-* [General Info](#general-info)
-* [Local Installation](#local-installation)
-* [Project goals](#project-goals)
+## Table of Contents :books:
+* [General Info :information_source:](#general-info)
+* [Local Installation :open_file_folder:](#local-installation)
+* [Project goals :trophy:](#project-goals)
 * [Tools used :wrench:](#tools-used)
-* [Try it Out!](#try-it-out)
+* [Try it Out! :sunny:](#try-it-out)
 
 
 ## General Info
