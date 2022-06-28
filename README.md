@@ -1,12 +1,14 @@
 # MyWeatha
 
+![Banner](./src/assets/banner.JPG)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Table of Contents
 * [General Info](#general-info)
 * [Local Installation](#local-installation)
 * [Project goals](#project-goals)
-* [Tools used](#tools-used)
+* [Tools used :wrench:](#tools-used)
 * [Try it Out!](#try-it-out)
 
 
@@ -98,19 +100,32 @@ nodemon server.js
 
 ### Project goals
 - :heavy_check_mark: Uses OpenWeather Api https://openweathermap.org/forecast5#JSON
-- :heavy_check_mark: Fetch Data
+- :heavy_check_mark: Fetch Data using [axios](https://www.npmjs.com/package/axios)
 - :heavy_check_mark: 5 day forecast
-- :heavy_check_mark: Implement Toastify for imvalid searches
+- :heavy_check_mark: Implement [Toastify](https://www.npmjs.com/package/react-toastify) for imvalid searches
 - :heavy_check_mark: divide each 3 hr incremenent of a day from the api into individual day divs
-- :heavy_check_mark: style the cards for each 3hr increment with each parent day div
+- :heavy_check_mark: style the cards for each 3hr increment with each parent day div using [Styled Components](https://www.npmjs.com/package/styled-components)
 - :heavy_check_mark: display the correct days of the week
 - :heavy_check_mark: optimize and styling
 - :heavy_check_mark: create a user table
-- :heavy_check_mark: add user registration forms
+- :heavy_check_mark: add user registration forms using [formik](https://www.npmjs.com/package/formik) and [yup](https://www.npmjs.com/package/yup)
 - :heavy_check_mark: add user authentication 
 - :heavy_check_mark: add user authorization
 - :heavy_check_mark: style the forms
 - :heavy_check_mark: user can add a city as their default forecast
+
+## Tools Used
+- React
+- React Router Dom
+- [Styled Components](https://www.npmjs.com/package/styled-components)
+- [Toastify](https://www.npmjs.com/package/react-toastify)
+- JavaScript
+- [Moment](https://momentjs.com/)
+- [Yup](https://www.npmjs.com/package/yup)
+- [Formik](https://www.npmjs.com/package/formik)
+- [Axios](https://www.npmjs.com/package/axios)
+- [OpenWeather](https://openweathermap.org/)
+
 
 
 
