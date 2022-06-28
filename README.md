@@ -113,6 +113,14 @@ $ nodemon server.js
 - :heavy_check_mark: add user authorization
 - :heavy_check_mark: style the forms
 - :heavy_check_mark: user can add a city as their default forecast
+- :heavy_check_mark:add current weather hook
+- :heavy_check_mark:switch https://www.weatherapi.com/ for current weathr hook
+- :heavy_check_mark:select a better hook for the 5 day forecast (?)
+- :heavy_check_mark:after consideration switched back to openweatherapi
+- :heavy_check_mark:add JWT for user authorization
+- :heavy_check_mark:how to create authorized protected routes only for the user?
+- :heavy_check_mark:store favorites in the backend
+- :heavy_check_mark:front end should store userid, store a city as default, reponse should have userid and default locaiton
 
 ## Tools Used
 - React
@@ -125,6 +133,13 @@ $ nodemon server.js
 - [Formik](https://www.npmjs.com/package/formik)
 - [Axios](https://www.npmjs.com/package/axios)
 - [OpenWeather](https://openweathermap.org/)
+- dotenv
+- cors
+- Express
+- Sequelize
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## Try it Out!
 - [Website](https://myweatha.netlify.app/)
