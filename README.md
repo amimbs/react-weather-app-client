@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Table of Contents
 * [General Info](#general-info)
 * [Local Installation](#local-installation)
-* [Responsibilities](#responsibilities)
+* [Project goals](#project-goals)
 * [Tools used](#tools-used)
 * [Try it Out!](#try-it-out)
 
@@ -78,10 +78,26 @@ npx sequelize-cli db:migrate
 cd react-weather-app-server
 nodemon server.js
 ```
-
+12) Switch to you in your `client folder`
+```console
+cd ..
+cd react-weather-app-client
+```
+13) In `CurrentForecast.jsx`, `Login.jsx`, and `Register.jsx`, switch the axios routes to th elocalhost post routes from `routes/Users.js` and `server.js` in `react-weather-app-server`
+14) Your application is now ready to be run locally!
+15) Just a recap of how to do that from the project directory:
+```console
+cd react-weather-app-client
+npm start
+```
+- from a second terminal
+```console
+cd react-weather-app-server
+nodemon server.js
+```
 
 ### Project goals
-- ~~Uses OpenWeather Api https://openweathermap.org/forecast5#JSON~~
+- :heavy_check_mark: Uses OpenWeather Api https://openweathermap.org/forecast5#JSON~~
 - ~~Fetch Data~~
 - ~~5 day forecast~~
 - ~~Implement Toastify for imvalid searches~~
@@ -92,9 +108,10 @@ nodemon server.js
 - ~~create a user table~~
 - ~~add user registration forms~~
 - ~~add user authentication~~ 
+- ~~add user authorization~~
 - ~~style the forms~~
 - ~~user can add a city as their default forecast~~
-- user can compare cities with default
+
 
 
 
