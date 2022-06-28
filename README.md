@@ -97,7 +97,6 @@ $ npm start
 $ cd react-weather-app-server
 $ nodemon server.js
 ```
-
 ### Project goals
 - :heavy_check_mark: Uses OpenWeather Api https://openweathermap.org/forecast5#JSON
 - :heavy_check_mark: Fetch Data using [axios](https://www.npmjs.com/package/axios)
