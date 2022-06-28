@@ -126,6 +126,12 @@ nodemon server.js
 - [Axios](https://www.npmjs.com/package/axios)
 - [OpenWeather](https://openweathermap.org/)
 
+## Try it Out!
+- [Website](https://myweatha.netlify.app/)
+
+https://user-images.githubusercontent.com/85318939/176268607-e6c1065d-ebe1-4b82-ac51-c178c802f0ed.mp4
+
+
 
 
 
