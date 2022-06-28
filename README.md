@@ -98,8 +98,8 @@ nodemon server.js
 
 ### Project goals
 - :heavy_check_mark: Uses OpenWeather Api https://openweathermap.org/forecast5#JSON~~
-- ~~Fetch Data~~
-- ~~5 day forecast~~
+- [x]Fetch Data
+- [ x ]5 day forecast~~
 - ~~Implement Toastify for imvalid searches~~
 - ~~divide each 3 hr incremenent of a day from the api into individual day divs~~
 - ~~style the cards for each 3hr increment with each parent day div~~
