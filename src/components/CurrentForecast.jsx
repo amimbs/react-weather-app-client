@@ -22,7 +22,7 @@ export default function CurrentForecast({ activeUser, current, setActiveUser }) 
 
     const setDefaultCity = async () => {
 
-        await axios.post(process.env.REACT_APP_SERVER + 'users/set-default', {
+        await axios.post('https://weathaserverreact.herokuapp.com/users/set-default', {
             defaultCity: current.name,
             userId: activeUser.id
         });

@@ -59,7 +59,7 @@ export default function Register() {
       password: data.password
     }
 
-    await axios.post(process.env.REACT_APP_SERVER + "/users/register", user)
+    await axios.post("https://weathaserverreact.herokuapp.com/users/register", user)
   }
 
   return (
